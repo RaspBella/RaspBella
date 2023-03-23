@@ -1,3 +1,5 @@
+import datetime
+
 class Person():
     def __init__(self, name, pronouns, age):
         self.__name = name
@@ -35,7 +37,7 @@ I'm a programmer and my favourite language{"'s are "+", ".join(self.__favourite_
 Me = Programmer(
     "Bella",
     ["They", "She"],
-    17,
+    (datetime.datetime.now() - datetime.datetime(2005, 4, 8, 6, 23)).days//365,
     ["Python", "C++", "Rust"],
     Software_preferences("Gentoo Linux", "Awesome", "Firefox", "VSCodium")
 )
