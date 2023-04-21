@@ -1,5 +1,3 @@
-#pragma once
-
 std::string join(std::vector<std::string> list, std::string delim)
 {
     std::string returned;
