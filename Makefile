@@ -1,8 +1,13 @@
-default: me
-	./me
+SRCS=me.cpp bella.c
+BINS=me bella
 
-me: me.cpp
-	g++ me.cpp -o me
+all: $(SRCS) $(BINS)
+
+%: %.cpp
+	c++ $< -o $@
+
+%: %.c
+	cc $< -o $@
 
 clean:
-	rm -f me
+	rm -f $(BINS)
