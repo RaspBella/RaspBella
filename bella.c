@@ -3,6 +3,8 @@
 #include <stdint.h>
 #include <string.h>
 
+#define STR_LIST(...)((char*[]){__VA_ARGS__, NULL})
+
 typedef struct
 {
     char** values;
@@ -129,20 +131,18 @@ int main()
 {
     programmer* bella = create_programmer(
         "Bella",
-        (char*[])
-        {
+        STR_LIST
+        (
             "She",
             "Her",
             "They",
-            "Them",
-            NULL
-        },
+            "Them"
+        ),
         18,
-        (char*[])
-        {
-            "C",
-            NULL
-        },
+        STR_LIST
+        (
+            "C"
+        ),
         create_software_preferences(
             "Gentoo Linux",
             "Awesome",
