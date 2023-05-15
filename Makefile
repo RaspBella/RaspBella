@@ -1,13 +1,14 @@
-SRCS=me.cpp bella.c
+CFLAGS=-g -Wall -O3
 BINS=me bella
 
-all: $(SRCS) $(BINS)
+all: $(BINS)
+	@for bin in $^ ; do ./$$bin ; done
 
-%: %.cpp
-	c++ $< -o $@
+me: me.cpp
+	c++ $(CFLAGS) $^ -o $@
 
-%: %.c
-	cc $< -o $@
+bella: bella.c person.c
+	cc $(CFLAGS) $^ -o $@
 
 clean:
 	rm -f $(BINS)

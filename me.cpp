@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "headers/join.hpp"
+#include "join.hpp"
 
 using namespace std;
 
@@ -74,6 +74,7 @@ class Programmer : public Person
                  << (favourite_languages.size() == 1 ? " is " : "'s are ")
                  << join(favourite_languages, ", ") << endl;
             software_preferences.print();
+	    cout << endl;
         }
 };
 
