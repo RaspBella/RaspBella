@@ -1,9 +1,41 @@
-# READ ME
-Using Gentoo Gnu/Linux, done LFS version's 11.0, 11.1, 11.3 ✌️.
--
-I was inspired by Alex's([Voklen/Voklen](https://github.com/Voklen/Voklen)) "about self code" and am making something similar
+# C
+```c
+#include <stdint.h>
+#include <stddef.h>
 
-### The very cool [c++](me.cpp) implementation of me
-### The messy bloat [python](me.py) implementation of me
-### The refreshing [ruby](me.rb) implementation of me
-### The insane yet memory safe [c](bella.c) implementation of me
+typedef struct
+{
+    char *name;
+    uint8_t age;
+    char **pronouns;
+    char **favourite_languages;
+    struct
+    {
+	    char *OS;
+	    char *DE;
+        char *browser;
+        char **SEs;
+    	char **IDEs;
+    }
+    software_preferences;
+}
+person;
+
+int main()
+{
+    person bella = {
+	    .name = "Bella Campbell",
+        .age = 18,
+        .pronouns = (char*[]){"she", "her", "they", "them", NULL},
+        .favourite_languages = (char*[]){"C", "C++", "Python", "Ruby", "Lua", NULL},
+	    .software_preferences = {
+	        .OS = "Gentoo Linux",
+	        .DE = "Awesome",
+	        .browser = "Firefox",
+            .SEs = (char*[]){"Ecosia", "LibreX", NULL},
+	        .IDEs = (char*[]){"Neovim", "VSCodium", NULL}
+	    }
+    };
+}
+```
+# Above inspired by [Voklen](https://github.com/Voklen/Voklen)'s README.md
