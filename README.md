@@ -24,13 +24,13 @@ int main(void)
         .name = "Bella Campbell",
         .age = 18,
         .pronouns = (char*[]){"she", "her", "they", "them", NULL},
-        .favourite_languages = (char*[]){"C", "C++", NULL},
+        .favourite_languages = (char*[]){"C", NULL},
         .software_preferences = {
             .OS = "Gentoo Linux",
             .DE = "Hyprland",
             .browser = "Firefox",
             .search_engine = "Ecosia",
-            .IDEs = (char*[]){"VSCodium", "Neovim", NULL}
+            .IDEs = (char*[]){"Neovim", NULL}
         }
     };
 }
