@@ -13,7 +13,7 @@ struct person
         char *DE;
         char *browser;
         char *search_engine;
-        char **IDEs;
+        char *EDITOR;
     }
     software_preferences;
 };
@@ -30,7 +30,7 @@ int main(void)
             .DE = "Hyprland",
             .browser = "Firefox",
             .search_engine = "Ecosia",
-            .IDEs = (char*[]){"Neovim", NULL}
+            .EDITOR = "Neovim"
         }
     };
 }
