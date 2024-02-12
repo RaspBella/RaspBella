@@ -1,25 +1,21 @@
 ```c
 #include <stddef.h>
 
-struct person
-{
+struct person {
     char *name;
     unsigned int age;
     char **pronouns;
     char **favourite_languages;
-    struct
-    {
+    struct {
         char *OS;
         char *DE;
         char *browser;
         char *search_engine;
         char *EDITOR;
-    }
-    software_preferences;
+    } software_preferences;
 };
 
-int main(void)
-{
+int main(void) {
     struct person bella = {
         .name = "Bella Campbell",
         .age = 18,
@@ -30,7 +26,7 @@ int main(void)
             .DE = "Hyprland",
             .browser = "Firefox",
             .search_engine = "Ecosia",
-            .EDITOR = "Neovim"
+            .EDITOR = "NeoVim"
         }
     };
 }
