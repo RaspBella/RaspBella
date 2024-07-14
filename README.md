@@ -29,10 +29,10 @@ int main()
         .pronouns = (char*[]){"she", "her", "they", "them", NULL},
         .favourite_languages = (char*[]){"C", "C++", "Python", "Ruby", "Lua", NULL},
 	    .software_preferences = {
-	        .OS = "Gentoo Linux",
+            .OS = "Gentoo Linux",
 	        .DE = "Awesome",
 	        .browser = "Firefox",
-            .SEs = (char*[]){"Ecosia", "LibreX", NULL},
+		    .SEs = (char*[]){"Ecosia", "LibreX", NULL},
 	        .IDEs = (char*[]){"Neovim", "VSCodium", NULL}
 	    }
     };
