@@ -1,12 +1,10 @@
-# C
 ```c
-#include <stdint.h>
 #include <stddef.h>
 
-typedef struct
+struct person
 {
     char *name;
-    uint8_t age;
+    unsigned int age;
     char **pronouns;
     char **favourite_languages;
     struct
@@ -14,26 +12,25 @@ typedef struct
         char *OS;
         char *DE;
         char *browser;
-        char **SEs;
+        char *search_engine;
         char **IDEs;
     }
     software_preferences;
-}
-person;
+};
 
-int main()
+int main(void)
 {
-    person bella = {
+    struct person bella = {
         .name = "Bella Campbell",
         .age = 18,
         .pronouns = (char*[]){"she", "her", "they", "them", NULL},
-        .favourite_languages = (char*[]){"C", "C++", "Python", "Ruby", "Lua", NULL},
+        .favourite_languages = (char*[]){"C", "C++", NULL},
         .software_preferences = {
             .OS = "Gentoo Linux",
-            .DE = "Awesome",
+            .DE = "Hyprland",
             .browser = "Firefox",
-            .SEs = (char*[]){"Ecosia", "LibreX", NULL},
-            .IDEs = (char*[]){"Neovim", "VSCodium", NULL}
+            .search_engine = "Ecosia",
+            .IDEs = (char*[]){"VSCodium", "Neovim", NULL}
         }
     };
 }
