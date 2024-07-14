@@ -81,9 +81,9 @@ int main()
 {
     Programmer Me(
         "Bella",
-        {"They", "She"},
+        {"She", "Her", "They", "Them"},
         17,
-        {"C++", "Python", "Rust"},
+        {"C", "C++", "Python", "Rust"},
         Software_preferences(
             "Gentoo Linux",
             "Awesome",

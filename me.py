@@ -36,10 +36,10 @@ I'm a programmer and my favourite language{"'s are "+", ".join(self.__favourite_
 
 Me = Programmer(
     "Bella",
-    ["They", "She"],
+    ["She", "Her", "They", "Them"],
     (datetime.datetime.now() - datetime.datetime(2005, 4, 8, 6, 23)).days//365,
-    ["Python", "C++", "Rust"],
-    Software_preferences("Gentoo Linux", "Awesome", "Firefox", "VSCodium")
+    ["C", "C++", "Python", "Rust"],
+    So0ftware_preferences("Gentoo Linux", "Awesome", "Firefox", "VSCodium")
 )
 
 print(Me)
