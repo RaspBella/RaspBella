@@ -157,5 +157,5 @@ int main()
 
     bella->print(bella);
 
-    destroy_programmer(bella);
+    bella->destroy(bella);
 }
