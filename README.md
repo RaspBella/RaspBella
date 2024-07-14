@@ -1,5 +1,5 @@
 # READ ME
-Tripleboot Arch, Gentoo, LFS haver if you count booting LFS in a VM because I use LUKS and LVM on my NVME drive, This is because I would need an initrd/intramfs and that is not in the scope of LFS.
+Using Gentoo Gnu/Linux, done LFS twice✌️.
 -
 I was inspired by Alex's([Voklen/Voklen](https://github.com/Voklen/Voklen)) "about self code" and am making something similar
 
@@ -15,33 +15,39 @@ class Computer():
         self.OS = OS            
 
 class Programmer():
-    def __init__(self, name, age, pronouns, favourite_languages, desktop, laptop):
+    def __init__(self, name, age, pronouns, favourite_languages, desktop, laptops):
         self.name =  name
         self.age = age
         self.pronouns = pronouns
         self.favourite_languages = favourite_languages
         self.desktop = desktop
-        self.laptop = laptop
+        self.laptops = laptops
 
 Me = Programmer(
     "Bella Campbell",
     17,
-    ["She", "They"],
+    ["They", "She"],
     ["C", "Python"],
     Computer(
         {
-            "Arch":OS("Awesome", "Firefox/Qutebrowser", "NeoVim"),
-            "Gentoo":OS("None", "None", "NeoVim"),
-            "LFS":OS("None", "None", "Vim")
+            "Gentoo":OS("Awesome", "Firefox", "NeoVim")
         }
     ),
+    [
     Computer(
         {
-            "Arch":OS("Awesome", "Qutebrowser", "Code - OSS"),
-            "Gentoo":OS("Awesome", "Qutebrowser", "NeoVim")
+            "Arch":OS("Awesome", "Qutebrowser", "Code - OSS")
         }
-    )
+    ),
+"""
+    Computer(
+        {
+            "Debian":OS("Plasma", "Firefox", "NeoVim") #Christmas laptop in near future
+        }
+"""
+    ]
 )
+# Gonna re-write this code soon because I think I'm better with OOP now.
 ```
 
 <!---
