@@ -25,7 +25,7 @@ struct person {
 int main(void) {
     struct person bella = {
         .name = "Bella Campbell",
-        .age = 18,
+        .age = 19,
         .pronouns = {
 	    .count = 4,
 	    .strings = (char*[]) {
