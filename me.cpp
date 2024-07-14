@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "headers/join.hpp"
 
 using namespace std;
 
@@ -18,14 +19,9 @@ class Person
             this->age = age;
         }
 
-        void display()
+        void print()
         {
-            cout << "Hello I'm " + name + ", " << age << " and use " + pronouns[0];
-            for (int i=1; i<pronouns.size(); i++)
-            {
-                cout << "/" + pronouns[i];
-            }
-            cout << " pronouns";
+            cout << "Hello I'm " + name + ", " << age << " and use " + join(pronouns, "/");
         }
 };
 
@@ -48,7 +44,7 @@ class Software_preferences
 
         Software_preferences(){}
 
-        void display()
+        void print()
         {
             cout << "My software stack:" << endl
                  << "\tOperating System: " + OS << endl
@@ -71,18 +67,13 @@ class Programmer : public Person
             this->software_preferences = software_preferences;
         }
 
-        void display()
+        void print()
         {
-            Person::display();
+            Person::print();
             cout << endl << "I'm a programmer and my favourite language"
                  << (favourite_languages.size() == 1 ? " is " : "'s are ")
-                 << favourite_languages[0];
-            for (int i=1; i<favourite_languages.size(); i++)
-            {
-                cout << ", " << (i == favourite_languages.size() - 1 ? "and " : "") + favourite_languages[i];
-            }
-            cout << endl;
-            software_preferences.display();
+                 << join(favourite_languages, ", ") << endl;
+            software_preferences.print();
         }
 };
 
@@ -101,7 +92,7 @@ int main()
         )
     );
 
-    Me.display();
+    Me.print();
 
     return 0;
 }

@@ -1,8 +1,8 @@
-run: me.o
-	./me.o
+default: me
+	./me
 
-me.o: me.c++
-	c++ me.c++ -o me.o
+me: me.cpp
+	g++ me.cpp -o me
 
-clean: me.o
-	rm -f me.o
+clean:
+	rm -f me
