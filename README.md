@@ -11,11 +11,11 @@ typedef struct
     char **favourite_languages;
     struct
     {
-	    char *OS;
-	    char *DE;
+        char *OS;
+        char *DE;
         char *browser;
         char **SEs;
-    	char **IDEs;
+        char **IDEs;
     }
     software_preferences;
 }
@@ -24,17 +24,17 @@ person;
 int main()
 {
     person bella = {
-	    .name = "Bella Campbell",
+        .name = "Bella Campbell",
         .age = 18,
         .pronouns = (char*[]){"she", "her", "they", "them", NULL},
         .favourite_languages = (char*[]){"C", "C++", "Python", "Ruby", "Lua", NULL},
-	    .software_preferences = {
+        .software_preferences = {
             .OS = "Gentoo Linux",
-	        .DE = "Awesome",
-	        .browser = "Firefox",
-		    .SEs = (char*[]){"Ecosia", "LibreX", NULL},
-	        .IDEs = (char*[]){"Neovim", "VSCodium", NULL}
-	    }
+            .DE = "Awesome",
+            .browser = "Firefox",
+            .SEs = (char*[]){"Ecosia", "LibreX", NULL},
+            .IDEs = (char*[]){"Neovim", "VSCodium", NULL}
+        }
     };
 }
 ```
