@@ -3,8 +3,45 @@ Hey I'm Bella and I am bold enough to (in the past) install triple boot Arch Lin
 -
 I was inspired by Alex's([Voklen/Voklen](https://github.com/Voklen/Voklen)) "about self code" and am making something similar
 
-```c
-printf("Hello World!");
+```python
+class OS():
+    def __init__(self, DE, browser, IDE):
+        self.DE = DE
+        self.browser = browser
+        self.IDE = IDE
+
+class Computer():
+    def __init__(self, OS):
+        self.OS = OS            
+
+class Programmer():
+    def __init__(self, name, age, pronouns, favourite_languages, desktop, laptop):
+        self.name =  name
+        self.age = age
+        self.pronouns = pronouns
+        self.favourite_languages = favourite_languages
+        self.desktop = desktop
+        self.laptop = laptop
+
+Me = Programmer(
+    "Bella Campbell",
+    17,
+    ["She", "They"],
+    ["C", "Python"],
+    Computer(
+        {
+            "Arch":OS("Awesome", "Firefox/Qutebrowser", "NeoVim"),
+            "Gentoo":OS("None", "None", "NeoVim"),
+            "LFS":OS("None", "None", "Vim")
+        }
+    ),
+    Computer(
+        {
+            "Arch":OS("Awesome", "Qutebrowser", "Code - OSS"),
+            "Gentoo":OS("Awesome", "Qutebrowser", "NeoVim")
+        }
+    )
+)
 ```
 
 <!---
