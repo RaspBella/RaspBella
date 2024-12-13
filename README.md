@@ -1,6 +1,5 @@
 ```c
 #include <stdio.h>
-#include <stddef.h>
 
 struct software {
     char *OS;
