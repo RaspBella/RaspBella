@@ -13,7 +13,7 @@ struct person {
     unsigned age;
     char **pronouns; // Can be NULL
     char **fave_langs; // Can also be NULL
-    struct software software;
+    struct software *software; // can be NULL aswell
 };
 
 void print_person(struct person *person) {
@@ -39,7 +39,9 @@ void print_person(struct person *person) {
 	}
     }
 
-    printf("\nSoftware:\n\tOS: %s\n\tDesktop Environment/Window Manager: %s\n\tWeb Browser: %s\n\tText Editor: %s\n", person->software.OS, person->software.DE, person->software.browser, person->software.editor);
+    if (person->software) {
+        printf("\nSoftware:\n\tOS: %s\n\tDesktop Environment/Window Manager: %s\n\tWeb Browser: %s\n\tText Editor: %s\n", person->software->OS, person->software->DE, person->software->browser, person->software->editor);
+    }
 }
 
 int main(void) {
@@ -48,7 +50,7 @@ int main(void) {
         .age = 19,
         .pronouns = (char*[]){ "she", "her", NULL },
         .fave_langs = (char*[]){ "c", "python", NULL },
-        .software = {
+        .software = &(struct software){
             .OS = "Gentoo Linux",
             .DE = "Hyprland",
             .browser = "Firefox",
