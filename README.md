@@ -1,6 +1,9 @@
 ```c
 #include <stdio.h>
 
+#define list(type, ...) (type) { __VA_ARGS__ }
+#define str_list(...) list(char*[], __VA_ARGS__, NULL)
+
 struct software {
     char *OS;
     char *DE;
@@ -48,8 +51,8 @@ int main(void) {
     struct person bella = {
         .name = "Bella",
         .age = 19,
-        .pronouns = (char*[]){ "she", "her", NULL },
-        .fave_langs = (char*[]){ "c", "python", NULL },
+        .pronouns = str_list("she", "her"),
+        .fave_langs = str_list("c", "python"),
         .software = &(struct software){
             .OS = "Gentoo Linux",
             .DE = "Hyprland",
