@@ -18,4 +18,4 @@ int main(void) {
     print_person(&bella);
 }
 ```
-# [bella.c](bella.c) inspired by [Voklen](https://github.com/Voklen/Voklen)'s README.md
+# above inspired by [Voklen](https://github.com/Voklen/Voklen)'s README.md
