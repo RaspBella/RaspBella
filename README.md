@@ -50,7 +50,7 @@ void print_person(struct person *person) {
 int main(void) {
     struct person bella = {
         .name = "Bella",
-        .age = 19,
+        .age = 20,
         .pronouns = str_list("she", "her"),
         .fave_langs = str_list("c", "python"),
         .software = &(struct software){
