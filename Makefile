@@ -5,7 +5,7 @@ INSTALL_FILES=README.md index.html
 
 all: install
 
-install: $(INSTALL_FILES) build
+install: index.html build
 	mv $^
 
 $(INSTALL_FILES): gen
