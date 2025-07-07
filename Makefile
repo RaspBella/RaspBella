@@ -1,5 +1,5 @@
-CC=clang
-CFLAGS=-std=c23
+CC=clang-19
+CFLAGS=-std=c23 -Wall -Wextra
 
 INSTALL_FILES=README.md index.html
 
