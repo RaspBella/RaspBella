@@ -17,4 +17,4 @@ docs:
 	mkdir docs
 
 clean:
-	rm -f gen
+	rm -fr gen docs
