@@ -5,7 +5,7 @@ INSTALL_FILES=README.md index.html
 
 all: install
 
-install: index.html build
+install: index.html docs
 	mv $^
 
 $(INSTALL_FILES): gen
@@ -13,8 +13,8 @@ $(INSTALL_FILES): gen
 
 gen: gen.c bella.c
 
-build:
-	mkdir build
+docs:
+	mkdir docs
 
 clean:
 	rm -f gen
