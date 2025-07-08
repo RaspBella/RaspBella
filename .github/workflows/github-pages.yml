@@ -34,7 +34,7 @@ jobs:
           message: Update README.md
           committer_name: GitHub Actions
           committer_email: actions@github.com
-          add: README.md
+          add: 'README.md --force'
           cwd: .
 
   deploy:
