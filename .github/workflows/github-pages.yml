@@ -29,6 +29,14 @@ jobs:
         with:
           path: ./docs
 
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: Update README.md
+          committer_name: GitHub Actions
+          committer_email: actions@github.com
+          add: README.md
+          cwd: .
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
