@@ -5,16 +5,17 @@ INSTALL_FILES=README.md index.html
 
 all: install
 
-install: index.html docs
-	mv $^
+install: index.html README.md ../docs
+	mv README.md ..
+	mv index.html ../docs
 
 $(INSTALL_FILES): gen
 	./gen
 
 gen: gen.c bella.c
 
-docs:
-	mkdir docs
+../docs:
+	mkdir ../docs
 
 clean:
-	rm -fr gen docs
+	rm -fr gen ../docs ../README.md
