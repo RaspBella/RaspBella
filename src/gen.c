@@ -26,7 +26,7 @@ extern User RaspBella;
 
 int main(void) {
   // Write README.md
-  FILE *readme = fopen("README.md", "w");
+  FILE *readme = fopen("../README.md", "w");
 
   fprintf(readme, "```bella.c\n");
   fwrite(bella_c, sizeof(bella_c), 1, readme);
@@ -37,7 +37,7 @@ int main(void) {
 
 
   // Write index.html
-  FILE *html = fopen("index.html", "w");
+  FILE *html = fopen("../docs/index.html", "w");
 
   fwrite(t1, sizeof(t1), 1, html);
 
