@@ -12,4 +12,4 @@ gen: gen.o bella.o
 	mkdir ../docs
 
 clean:
-	rm -fr gen ../docs ../README.md
+	rm -fr gen $(wildcard *.o) ../docs ../README.md
