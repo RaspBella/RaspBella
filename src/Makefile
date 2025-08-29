@@ -4,7 +4,9 @@ CFLAGS=-std=c23 -Wall -Wextra
 ../docs/index.html ../README.md: ../docs gen
 	./gen
 
-gen: gen.c bella.c
+gen: gen.o bella.o
+
+%.o: %.c user.h
 
 ../docs:
 	mkdir ../docs
