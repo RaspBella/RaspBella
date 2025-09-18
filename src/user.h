@@ -42,8 +42,8 @@ typedef struct {
   char *name;
   unsigned age;
   char **pronouns;
-  char **fave_langs;
   hobby *hobbies;
+  char **fave_langs;
   struct {
     char *cpu;
     struct {

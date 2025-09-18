@@ -63,20 +63,6 @@ int main(void) {
     RaspBella.age
   );
 
-  if (RaspBella.fave_langs) {
-    fprintf(html, "      <br>My favourite programming languages: %s",
-      RaspBella.fave_langs[0]
-    );
-
-    for (int i = 1; RaspBella.fave_langs[i] != NULL; i++) {
-      fprintf(html, ", %s",
-        RaspBella.fave_langs[i]
-      );
-    }
-
-    fprintf(html, "\n");
-  }
-
   if (RaspBella.hobbies) {
     fprintf(html, "      <br>I like <a href=\"%s\">%s</a>",
       RaspBella.hobbies[0].link,
@@ -87,6 +73,20 @@ int main(void) {
       fprintf(html, ", <a href=\"%s\">%s</a>",
         RaspBella.hobbies[i].link,
         RaspBella.hobbies[i].name
+      );
+    }
+
+    fprintf(html, "\n");
+  }
+
+  if (RaspBella.fave_langs) {
+    fprintf(html, "      <br>My favourite programming languages: %s",
+      RaspBella.fave_langs[0]
+    );
+
+    for (int i = 1; RaspBella.fave_langs[i] != NULL; i++) {
+      fprintf(html, ", %s",
+        RaspBella.fave_langs[i]
       );
     }
 
