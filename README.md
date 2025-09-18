@@ -8,10 +8,6 @@ User RaspBella = {
     "she",
     "her"
   ),
-  .fave_langs = str_list(
-    "c",
-    "python"
-  ),
   .hobbies = hobby_list(
     hobby(
       .name = "Speedcubing",
@@ -25,6 +21,10 @@ User RaspBella = {
       .name = "Gaming",
       .link = "/game"
     )
+  ),
+  .fave_langs = str_list(
+    "c",
+    "python"
   ),
   .hardware = {
     .cpu = "Ryzen 5 5600G",
