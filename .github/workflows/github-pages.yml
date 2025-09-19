@@ -18,8 +18,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install make and clang-19
-        run: sudo apt-get update && sudo apt-get install -y make clang-19
+      - name: Install make
+        run: sudo apt-get update && sudo apt-get install -y make
 
       - name: Run Make
         run: make -C src
