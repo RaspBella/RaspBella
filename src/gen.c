@@ -1,47 +1,38 @@
 #include <stdio.h>
-#include <assert.h>
 #include "user.h"
-
-const char bella_c[] = {
-#embed "bella.c"
-};
-
-const char t1[] = {
-#embed "templates/1.html"
-};
-
-const char t2[] = {
-#embed "templates/2.html"
-};
-
-const char t3[] = {
-#embed "templates/3.html"
-};
-
-const char t4[] = {
-#embed "templates/4.html"
-};
 
 extern User RaspBella;
 
 int main(void) {
-  // Write README.md
-  FILE *readme = fopen("../README.md", "w");
-
-  fprintf(readme, "```bella.c\n");
-  fwrite(bella_c, sizeof(bella_c), 1, readme);
-  fprintf(readme, "```");
-
-  fclose(readme);
-
-
-
-  // Write index.html
   FILE *html = fopen("../docs/index.html", "w");
 
-  fwrite(t1, sizeof(t1), 1, html);
-
-  fprintf(html, "      <p>Hi my name is %s",
+  fprintf(html,
+    "<!DOCTYPE html>\n"
+    "<html lang=\"en\">\n"
+    "  <head>\n"
+    "    <title>about - RaspBella</title>\n"
+    "    <link rel=\"stylesheet\" href=\"/main.css\">\n"
+    "    <meta charset=\"UTF-8\">\n"
+    "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+    "\n"
+    "    <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/favicon/apple-touch-icon.png\">\n"
+    "    <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicon/favicon-32x32.png\">\n"
+    "    <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon/favicon-16x16.png\">\n"
+    "    <link rel=\"manifest\" href=\"/favicon/site.webmanifest\">\n"
+    "  </head>\n"
+    "  <body>\n"
+    "    <ul class=\"nav\">\n"
+    "      <li><a href=\"/\">home</a></li>\n"
+    "      <li><a class=\"active\" href=\"/RaspBella\">about</a></li>\n"
+    "      <li><a href=\"/cubing\">cubing</a></li>\n"
+    "      <li><a href=\"/linux\">linux</a></li>\n"
+    "      <li><a href=\"/media\">media</a></li>\n"
+    "      <li><a href=\"/trans\">transportation</a></li>\n"
+    "    </ul>\n"
+    "    <div id=\"me\">\n"
+    "      <h2>Me</h2>\n"
+    "      <p>\n"
+    "        Hi my name is %s",
     RaspBella.name
   );
 
@@ -59,12 +50,16 @@ int main(void) {
     fprintf(html, ")\n");
   }
 
-  fprintf(html, "      <br>I'm %uyrs old\n",
+  fprintf(html,
+    "        <br>\n"
+    "        I'm %uyrs old\n",
     RaspBella.age
   );
 
   if (RaspBella.hobbies) {
-    fprintf(html, "      <br>I like <a href=\"%s\">%s</a>",
+    fprintf(html,
+      "        <br>\n"
+      "        I like <a href=\"%s\">%s</a>",
       RaspBella.hobbies[0].link,
       RaspBella.hobbies[0].name
     );
@@ -80,7 +75,9 @@ int main(void) {
   }
 
   if (RaspBella.fave_langs) {
-    fprintf(html, "      <br>My favourite programming languages: %s",
+    fprintf(html,
+      "        <br>\n"
+      "        My favourite programming languages: %s",
       RaspBella.fave_langs[0]
     );
 
@@ -93,65 +90,64 @@ int main(void) {
     fprintf(html, "\n");
   }
 
-  fwrite(t2, sizeof(t2), 1, html);
-
-  fprintf(html, "        <li>%s</li>\n",
-    RaspBella.hardware.cpu
-  );
-
-  fprintf(html, "        <li>%uG DDR%u %uMHZ</li>\n",
+  fprintf(html,
+    "      </p>\n"
+    "    </div>\n"
+    "    <div id=\"hardware\">\n"
+    "      <h3>My pc harware</h3>\n"
+    "      <ul>\n"
+    "        <li>%s</li>\n"
+    "        <li>%uG DDR%u %uMHZ</li>\n",
+    RaspBella.hardware.cpu,
     RaspBella.hardware.ram.gb,
     RaspBella.hardware.ram.ddr,
     RaspBella.hardware.ram.mhz
   );
 
-  assert(RaspBella.hardware.drives);
-
-  for (int i = 0; RaspBella.hardware.drives[i].name != NULL; i++) {
-    fprintf(html, "        <li>%s - %uGB</li>\n",
-      RaspBella.hardware.drives[i].name,
-      RaspBella.hardware.drives[i].gb
-    );
+  if (RaspBella.hardware.drives) {
+    for (int i = 0; RaspBella.hardware.drives[i].name != NULL; i++) {
+      fprintf(html, "        <li>%s - %uGB</li>\n",
+        RaspBella.hardware.drives[i].name,
+        RaspBella.hardware.drives[i].gb
+      );
+    }
   }
 
-  assert(RaspBella.hardware.monitors);
-
-  for (int i = 0; RaspBella.hardware.monitors[i].name != NULL; i++) {
-    fprintf(html, "        <li>%s: %ux%u@%u</li>\n",
-      RaspBella.hardware.monitors[i].name,
-      RaspBella.hardware.monitors[i].pixels.width,
-      RaspBella.hardware.monitors[i].pixels.height,
-      RaspBella.hardware.monitors[i].hz
-    );
+  if (RaspBella.hardware.monitors) {
+    for (int i = 0; RaspBella.hardware.monitors[i].name != NULL; i++) {
+      fprintf(html, "        <li>%s: %ux%u@%u</li>\n",
+        RaspBella.hardware.monitors[i].name,
+        RaspBella.hardware.monitors[i].pixels.width,
+        RaspBella.hardware.monitors[i].pixels.height,
+        RaspBella.hardware.monitors[i].hz
+      );
+    }
   }
 
-  fwrite(t3, sizeof(t3), 1, html);
-
-  fprintf(html, "        <li>OS: %s</li>\n",
-    RaspBella.software.OS
-  );
-
-  fprintf(html, "        <li>WM: %s</li>\n",
-    RaspBella.software.WM
-  );
-
-  fprintf(html, "        <li>Browser: %s</li>\n",
-    RaspBella.software.browser
-  );
-
-  fprintf(html, "        <li>Search engine: %s</li>\n",
-    RaspBella.software.search_engine
-  );
-
-  fprintf(html, "        <li>Terminal: %s</li>\n",
-    RaspBella.software.terminal
-  );
-
-  fprintf(html, "        <li>Editor: %s</li>\n",
+  fprintf(html,
+    "      </ul>\n"
+    "    </div>\n"
+    "    <div id=\"software\">\n"
+    "      <h3>Software I use</h3>\n"
+    "      <ul>\n"
+    "        <li>OS: %s</li>\n"
+    "        <li>WM: %s</li>\n"
+    "        <li>Browser: %s</li>\n"
+    "        <li>Search engine: %s</li>\n"
+    "        <li>Terminal: %s</li>\n"
+    "        <li>Editor: %s</li>\n"
+    "      </ul>\n"
+    "    </div>\n"
+    "  </body>\n"
+    "</html>\n",
+    RaspBella.software.OS,
+    RaspBella.software.WM,
+    RaspBella.software.browser,
+    RaspBella.software.search_engine,
+    RaspBella.software.terminal,
     RaspBella.software.editor
   );
 
-  fwrite(t4, sizeof(t4), 1, html);
 
   fclose(html);
 }

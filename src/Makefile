@@ -1,15 +1,15 @@
-CC=clang-19
-CFLAGS=-std=c23 -Wall -Wextra
+all: ../README.md ../docs/index.html
 
-../docs/index.html ../README.md: ../docs gen
-	./gen
+../README.md: bella.c
+	echo '```bella.c' > $@
+	cat $< >> $@
+	echo '```' >> $@
 
-gen: gen.o bella.o
+../docs/index.html: gen
+	mkdir -p ../docs
+	./$<
 
-%.o: %.c user.h
-
-../docs:
-	mkdir ../docs
+gen: gen.c bella.c
 
 clean:
 	rm -fr gen $(wildcard *.o) ../docs ../README.md
