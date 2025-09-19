@@ -23,7 +23,8 @@ User RaspBella = {
   ),
   .fave_langs = str_list(
     "c",
-    "python"
+    "python",
+    "js"
   ),
   .hardware = {
     .cpu = "Ryzen 5 5600G",
