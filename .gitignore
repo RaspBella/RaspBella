@@ -1,3 +1,4 @@
 gen
+*.o
 README.md
 docs

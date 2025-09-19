@@ -9,7 +9,7 @@ all: ../README.md ../docs/index.html
 	mkdir -p ../docs
 	./$<
 
-gen: gen.c bella.c
+gen: gen.o bella.o
 
 clean:
 	rm -fr gen $(wildcard *.o) ../docs ../README.md
