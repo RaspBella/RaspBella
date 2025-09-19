@@ -31,7 +31,7 @@ jobs:
 
       - uses: EndBug/add-and-commit@v9
         with:
-          message: Update README.md
+          message: [Automation] Update README.md
           committer_name: GitHub Actions
           committer_email: actions@github.com
           add: 'README.md --force'
