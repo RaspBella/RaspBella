@@ -1,8 +1,7 @@
-.PHONY: all clean
-
-all: gen
+gen: gen.o bella.o
+	cc $^ -o $@
 	mkdir -p ../docs
-	./$<
+	./$@
 
 clean:
-	git clean -f
+	git clean
