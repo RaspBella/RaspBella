@@ -167,7 +167,7 @@ int main(void) {
       fprintf(fp, "  \"%s\",\n", RaspBella.pronouns[i]);
     }
 
-    fprintf(fp, "  NULL\n}\n");
+    fprintf(fp, "  NULL\n};\n");
   }
 
   else {
