@@ -5,5 +5,5 @@ char **pronouns = (char*[]) {
   "she",
   "her",
   NULL
-}
+};
 ```
