@@ -4,9 +4,9 @@
 extern User RaspBella;
 
 int main(void) {
-  FILE *html = fopen("../docs/index.html", "w");
+  FILE *fp = fopen("../docs/index.html", "w");
 
-  fprintf(html,
+  fprintf(fp,
     "<!DOCTYPE html>\n"
     "<html lang=\"en\">\n"
     "  <head>\n"
@@ -37,27 +37,27 @@ int main(void) {
   );
 
   if (RaspBella.pronouns) {
-    fprintf(html, " (%s",
+    fprintf(fp, " (%s",
       RaspBella.pronouns[0]
     );
 
     for (int i = 1; RaspBella.pronouns[i] != NULL; i++) {
-      fprintf(html, "/%s",
+      fprintf(fp, "/%s",
         RaspBella.pronouns[i]
       );
     }
 
-    fprintf(html, ")\n");
+    fprintf(fp, ")\n");
   }
 
-  fprintf(html,
+  fprintf(fp,
     "        <br>\n"
     "        I'm %uyrs old\n",
     RaspBella.age
   );
 
   if (RaspBella.hobbies) {
-    fprintf(html,
+    fprintf(fp,
       "        <br>\n"
       "        I like <a href=\"%s\">%s</a>",
       RaspBella.hobbies[0].link,
@@ -65,32 +65,32 @@ int main(void) {
     );
 
     for (int i = 1; RaspBella.hobbies[i].name != NULL; i++) {
-      fprintf(html, ", <a href=\"%s\">%s</a>",
+      fprintf(fp, ", <a href=\"%s\">%s</a>",
         RaspBella.hobbies[i].link,
         RaspBella.hobbies[i].name
       );
     }
 
-    fprintf(html, "\n");
+    fprintf(fp, "\n");
   }
 
   if (RaspBella.fave_langs) {
-    fprintf(html,
+    fprintf(fp,
       "        <br>\n"
       "        My favourite programming languages: %s",
       RaspBella.fave_langs[0]
     );
 
     for (int i = 1; RaspBella.fave_langs[i] != NULL; i++) {
-      fprintf(html, ", %s",
+      fprintf(fp, ", %s",
         RaspBella.fave_langs[i]
       );
     }
 
-    fprintf(html, "\n");
+    fprintf(fp, "\n");
   }
 
-  fprintf(html,
+  fprintf(fp,
     "      </p>\n"
     "    </div>\n"
     "    <div id=\"hardware\">\n"
@@ -106,7 +106,7 @@ int main(void) {
 
   if (RaspBella.hardware.drives) {
     for (int i = 0; RaspBella.hardware.drives[i].name != NULL; i++) {
-      fprintf(html, "        <li>%s - %uGB</li>\n",
+      fprintf(fp, "        <li>%s - %uGB</li>\n",
         RaspBella.hardware.drives[i].name,
         RaspBella.hardware.drives[i].gb
       );
@@ -115,7 +115,7 @@ int main(void) {
 
   if (RaspBella.hardware.monitors) {
     for (int i = 0; RaspBella.hardware.monitors[i].name != NULL; i++) {
-      fprintf(html, "        <li>%s: %ux%u@%u</li>\n",
+      fprintf(fp, "        <li>%s: %ux%u@%u</li>\n",
         RaspBella.hardware.monitors[i].name,
         RaspBella.hardware.monitors[i].pixels.width,
         RaspBella.hardware.monitors[i].pixels.height,
@@ -124,7 +124,7 @@ int main(void) {
     }
   }
 
-  fprintf(html,
+  fprintf(fp,
     "      </ul>\n"
     "    </div>\n"
     "    <div id=\"software\">\n"
@@ -148,6 +148,7 @@ int main(void) {
     RaspBella.software.editor
   );
 
+  fp = freopen("../README.md", "w", fp);
 
-  fclose(html);
+  fclose(fp);
 }
