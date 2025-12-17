@@ -9,7 +9,7 @@ int main(void) {
   fprintf(
     fp,
     "```c\n"
-    "char *name = \"%s\";\n"
+    "char name[] = \"%s\";\n"
     "unsigned age = %u;\n",
     RaspBella.name,
     RaspBella.age
