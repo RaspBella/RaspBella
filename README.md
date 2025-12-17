@@ -1,7 +1,7 @@
 ```c
 char *name = "Bella";
 unsigned age = 20;
-char **pronouns = (char*[]) {
+char **pronouns = {
   "she",
   "her",
   NULL
