@@ -17,7 +17,7 @@ int main(void) {
   );
 
   if (RaspBella.pronouns) {
-    fprintf(fp, "(char*[]) {\n");
+    fprintf(fp, "{\n");
 
     for (int i = 0; RaspBella.pronouns[i] != NULL; i++) {
       fprintf(fp, "  \"%s\",\n", RaspBella.pronouns[i]);
