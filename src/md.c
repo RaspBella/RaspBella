@@ -17,17 +17,22 @@ int main(void) {
   );
 
   if (RaspBella.pronouns) {
-    fprintf(fp, "{\n");
+    fprintf(
+      fp,
+      "char *pronouns[] = {\n"
+      "  \"%s\"",
+      *RaspBella.pronouns
+    );
 
-    for (int i = 0; RaspBella.pronouns[i] != NULL; i++) {
-      fprintf(fp, "  \"%s\",\n", RaspBella.pronouns[i]);
+    for (int i = 1; RaspBella.pronouns[i] != NULL; i++) {
+      fprintf(fp, ",\n  \"%s\"", RaspBella.pronouns[i]);
     }
 
-    fprintf(fp, "  NULL\n};\n");
+    fprintf(fp, "\n};\n");
   }
 
   else {
-    fprintf(fp, "NULL;\n");
+    fprintf(fp, "char **pronouns = NULL;\n");
   }
 
   fprintf(fp, "```\n");
