@@ -1,48 +1,29 @@
 #include <stddef.h>
 
-typedef struct {
+struct hobby {
   char *name;
   char *link;
-} hobby;
+};
 
-typedef struct {
+struct drive {
   char *name;
   unsigned gb;
-} drive;
+};
 
-typedef struct {
-  unsigned width;
-  unsigned height;
-} pixels;
-
-typedef struct {
+struct monitor {
   char *name;
-  pixels pixels;
+  struct {
+    unsigned width;
+    unsigned height;
+  } pixels;
   unsigned hz;
-} monitor;
+};
 
-#define typed_array(type, ...) (type) { __VA_ARGS__ }
-
-#define null_term_list(type, ...) typed_array(type, __VA_ARGS__, NULL )
-
-#define str_list(...) null_term_list(char*[], __VA_ARGS__)
-
-#define drive_list(...) null_term_list(drive[], __VA_ARGS__)
-#define drive(name, gb) (drive) { name, gb }
-
-#define monitor_list(...) null_term_list(monitor[], __VA_ARGS__)
-#define monitor(name, pixels, hz) (monitor) { name, pixels, hz }
-
-#define pixels(width, height) (pixels) { width, height }
-
-#define hobby_list(...) null_term_list(hobby[], __VA_ARGS__)
-#define hobby(name, link) (hobby) { name, link }
-
-typedef struct {
+struct user {
   char *name;
   unsigned age;
   char **pronouns;
-  hobby *hobbies;
+  struct hobby *hobbies;
   char **fave_langs;
   struct {
     char *cpu;
@@ -51,8 +32,8 @@ typedef struct {
       unsigned ddr;
       unsigned mhz;
     } ram;
-    drive *drives;
-    monitor *monitors;
+    struct drive *drives;
+    struct monitor *monitors;
   } hardware;
   struct {
     char *OS;
@@ -62,4 +43,4 @@ typedef struct {
     char *terminal;
     char *editor;
   } software;
-} User;
+};

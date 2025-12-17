@@ -1,31 +1,34 @@
 #include "user.h"
 
-User RaspBella = {
+struct user RaspBella = {
   .name = "Bella",
   .age = 20,
-  .pronouns = str_list(
+  .pronouns = (char*[]){
     "she",
-    "her"
-  ),
-  .hobbies = hobby_list(
-    hobby(
+    "her",
+    NULL
+  },
+  .hobbies = (struct hobby[]){
+    {
       .name = "Speedcubing",
       .link = "/cubing"
-    ),
-    hobby(
+    },
+    {
       .name = "Programming",
       .link = "https://github.com/RaspBella"
-    ),
-    hobby(
+    },
+    {
       .name = "Gaming",
       .link = "/game"
-    )
-  ),
-  .fave_langs = str_list(
+    },
+    NULL
+  },
+  .fave_langs = (char*[]){
     "c",
     "python",
-    "js"
-  ),
+    "js",
+    NULL
+  },
   .hardware = {
     .cpu = "Ryzen 5 5600G",
     .ram = {
@@ -33,34 +36,36 @@ User RaspBella = {
       .ddr = 4,
       .mhz = 3200
     },
-    .drives = drive_list(
-      drive(
+    .drives = (struct drive[]){
+      {
         .name = "Kingston NV2",
         .gb = 1000
-      ),
-      drive(
+      },
+      {
         .name = "Seagate Firecuda 510",
         .gb = 500
-      )
-    ),
-    .monitors = monitor_list(
-      monitor(
+      },
+      NULL
+    },
+    .monitors = (struct monitor[]){
+      {
         .name = "Main monitor",
-        .pixels = pixels(
+        .pixels = {
           .width = 1920,
           .height = 1080
-        ),
+        },
         .hz = 144
-      ),
-      monitor(
+      },
+      {
         .name = "Tall monitor (to the left of Main)",
-        .pixels = pixels(
+        .pixels = {
           .width = 1080,
           .height = 1920
-        ),
+        },
         .hz = 60
-      )
-    )
+      },
+      NULL
+    }
   },
   .software = {
     .OS = "Gentoo Linux",
