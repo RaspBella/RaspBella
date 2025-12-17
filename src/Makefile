@@ -4,4 +4,4 @@ gen: gen.o bella.o
 	./$@
 
 clean:
-	git clean
+	rm -rf ../docs gen *.o
