@@ -10,8 +10,7 @@ int main(void) {
     fp,
     "```c\n"
     "char *name = \"%s\";\n"
-    "unsigned age = %u;\n"
-    "char **pronouns = ",
+    "unsigned age = %u;\n",
     RaspBella.name,
     RaspBella.age
   );
