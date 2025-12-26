@@ -31,6 +31,8 @@ struct user RaspBella = {
   },
   .hardware = {
     .cpu = "Ryzen 5 5600G",
+    .igpu = true,
+    .gpu = "AMD Radeon RX 7600",
     .ram = {
       .gb = 32,
       .ddr = 4,

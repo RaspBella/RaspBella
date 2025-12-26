@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "user.h"
 
 extern struct user RaspBella;
@@ -96,9 +97,12 @@ int main(void) {
     "    <div id=\"hardware\">\n"
     "      <h3>My pc harware</h3>\n"
     "      <ul>\n"
+    "        <li>%s%s"
     "        <li>%s</li>\n"
     "        <li>%uG DDR%u %uMHZ</li>\n",
     RaspBella.hardware.cpu,
+    RaspBella.hardware.igpu ? " with Integrated Graphics</li>\n" : "</li>\n",
+    RaspBella.hardware.gpu,
     RaspBella.hardware.ram.gb,
     RaspBella.hardware.ram.ddr,
     RaspBella.hardware.ram.mhz

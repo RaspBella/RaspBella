@@ -1,4 +1,5 @@
 #include <stddef.h>
+#include <stdbool.h>
 
 struct hobby {
   char *name;
@@ -27,6 +28,8 @@ struct user {
   char **fave_langs;
   struct {
     char *cpu;
+    bool igpu;
+    char *gpu;
     struct {
       unsigned gb;
       unsigned ddr;
