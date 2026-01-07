@@ -29,6 +29,7 @@ int main(void) {
     "      <li><a href=\"/linux\">linux</a></li>\n"
     "      <li><a href=\"/media\">media</a></li>\n"
     "      <li><a href=\"/trans\">transportation</a></li>\n"
+    "      <li><a href=\"/blog\">blog</li>\n"
     "    </ul>\n"
     "    <div id=\"me\">\n"
     "      <h2>Me</h2>\n"
