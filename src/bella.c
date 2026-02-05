@@ -25,8 +25,7 @@ struct user RaspBella = {
   },
   .fave_langs = (char*[]){
     "c",
-    "python",
-    "js",
+    "rust",
     NULL
   },
   .hardware = {
