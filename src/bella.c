@@ -72,8 +72,8 @@ struct user RaspBella = {
     .OS = "Gentoo Linux",
     .WM = "Hyprland",
     .browser = "Firefox",
-    .search_engine = "Ecosia",
+    .search_engine = "SearXNG",
     .terminal = "kitty & tmux",
-    .editor = "Neovim"
+    .editor = "NeoVim"
   }
 };
