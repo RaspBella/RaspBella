@@ -70,7 +70,7 @@ struct user RaspBella = {
   },
   .software = {
     .OS = "Gentoo Linux",
-    .WM = "Hyprland",
+    .WM = "Niri",
     .browser = "Firefox",
     .search_engine = "SearXNG",
     .terminal = "kitty & tmux",
