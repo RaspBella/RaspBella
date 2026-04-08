@@ -1,6 +1,6 @@
 ```c
 char name[] = "Bella";
-unsigned age = 20;
+unsigned age = 21;
 char *pronouns[] = {
   "she",
   "her"
