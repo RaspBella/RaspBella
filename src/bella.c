@@ -5,7 +5,7 @@ struct user RaspBella = {
   .age = 21,
   .pronouns = (char*[]){
     "she",
-    "her",
+    "it",
     NULL
   },
   .hobbies = (struct hobby[]){
@@ -25,7 +25,6 @@ struct user RaspBella = {
   },
   .fave_langs = (char*[]){
     "c",
-    "rust",
     NULL
   },
   .hardware = {
