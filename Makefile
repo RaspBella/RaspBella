@@ -9,7 +9,7 @@ bin=gen
 default: docs/index.html README.md
 
 README.md: src/bella.c
-	printf '# $<:\n```c\n%s```\nREADME.md inspired by [Voklen](https://github.com/Voklen)' "$$(cat $<)" > $@
+	printf '# $<:\n```c\n%s\n```\nREADME.md inspired by [Voklen](https://github.com/Voklen)' "$$(cat $<)" > $@
 
 docs/index.html: $(bin) docs
 	./$<
