@@ -24,5 +24,6 @@ struct person me = {
     link("kitty", "https://sw.kovidgoyal.net/kitty/"),
     link("neovim", "https://neovim.io/")
   )
-};```
+};
+```
 README.md inspired by [Voklen](https://github.com/Voklen)
