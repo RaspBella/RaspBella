@@ -4,7 +4,7 @@ src=$(wildcard src/*.c)
 obj=$(src:src/%.c=%.o)
 bin=gen
 
-.PHONY: default clean
+.PHONY: default clean README.md
 
 default: docs/index.html README.md
 
