@@ -1,78 +1,25 @@
 #include "user.h"
 
-struct user RaspBella = {
+struct person me = {
   .name = "Bella",
   .age = 21,
-  .pronouns = (char*[]){
+  .pronouns = list(
     "she",
-    "it",
-    NULL
-  },
-  .hobbies = (struct hobby[]){
-    {
-      .name = "Speedcubing",
-      .link = "/cubing"
-    },
-    {
-      .name = "Programming",
-      .link = "https://github.com/RaspBella"
-    },
-    {
-      .name = "Gaming",
-      .link = "/game"
-    },
-    NULL
-  },
-  .fave_langs = (char*[]){
-    "c",
-    NULL
-  },
-  .hardware = {
-    .cpu = "Ryzen 5 5600G",
-    .igpu = true,
-    .gpu = "AMD Radeon RX 7600",
-    .ram = {
-      .gb = 32,
-      .ddr = 4,
-      .mhz = 3200
-    },
-    .drives = (struct drive[]){
-      {
-        .name = "Kingston NV2",
-        .gb = 1000
-      },
-      {
-        .name = "Seagate Firecuda 510",
-        .gb = 500
-      },
-      NULL
-    },
-    .monitors = (struct monitor[]){
-      {
-        .name = "Main monitor",
-        .pixels = {
-          .width = 1920,
-          .height = 1080
-        },
-        .hz = 144
-      },
-      {
-        .name = "Tall monitor (to the left of Main)",
-        .pixels = {
-          .width = 1080,
-          .height = 1920
-        },
-        .hz = 60
-      },
-      NULL
-    }
-  },
-  .software = {
-    .OS = "Gentoo Linux",
-    .WM = "Niri",
-    .browser = "Firefox",
-    .search_engine = "SearXNG",
-    .terminal = "kitty & tmux",
-    .editor = "NeoVim"
-  }
+    "it"
+  ),
+  .likes = list(
+    link("cubing", "/cubing"),
+    link("tech", github("RaspBella")),
+    link("gaming", "/game")
+  ),
+  .computers = list(
+    "mary",
+    link("ivy", wikipedia("Ivy_Bridge_(microarchitecture)"))
+  ),
+  .software = list(
+    link("Gentoo Linux", "https://www.gentoo.org/"),
+    link("niri", "https://niri-wm.github.io/niri/"),
+    link("kitty", "https://sw.kovidgoyal.net/kitty/"),
+    link("neovim", "https://neovim.io/")
+  )
 };

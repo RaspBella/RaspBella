@@ -1,5 +1,4 @@
-html
-md
 *.o
+gen
 README.md
 docs

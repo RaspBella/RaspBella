@@ -1,49 +1,22 @@
+#ifndef USER_H
+#define USER_H
+
 #include <stddef.h>
-#include <stdbool.h>
 
-struct hobby {
-  char *name;
-  char *link;
-};
+#define list(...) (char*[]){ __VA_ARGS__, NULL }
 
-struct drive {
-  char *name;
-  unsigned gb;
-};
+#define link(TEXT, HREF) "<a href=\""HREF"\">"TEXT"</a>"
 
-struct monitor {
-  char *name;
-  struct {
-    unsigned width;
-    unsigned height;
-  } pixels;
-  unsigned hz;
-};
+#define github(PATH) "https://github.com/"PATH
+#define wikipedia(ARTICLE) "https://en.wikipedia.org/wiki/"ARTICLE
 
-struct user {
+struct person {
   char *name;
   unsigned age;
   char **pronouns;
-  struct hobby *hobbies;
-  char **fave_langs;
-  struct {
-    char *cpu;
-    bool igpu;
-    char *gpu;
-    struct {
-      unsigned gb;
-      unsigned ddr;
-      unsigned mhz;
-    } ram;
-    struct drive *drives;
-    struct monitor *monitors;
-  } hardware;
-  struct {
-    char *OS;
-    char *WM;
-    char *browser;
-    char *search_engine;
-    char *terminal;
-    char *editor;
-  } software;
+  char **likes;
+  char **computers;
+  char **software;
 };
+
+#endif /* USER_H */
